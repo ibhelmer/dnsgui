@@ -170,29 +170,31 @@ def create_gui():
         state="readonly",
         width=8,
     )
-    combo_type.grid(row=0, column=3, sticky="w")
+    combo_type.grid(row=0, column=4, sticky="w")
 
+
+
+    # --------- Linje 1: fil-opslag + ryd output ----------
     btn_lookup = ttk.Button(
         main_frame,
         text="Slå op",
         command=lambda: on_single_lookup(entry_host, record_type_var, text_output, resolver),
     )
-    btn_lookup.grid(row=0, column=4, padx=(10, 0))
+    btn_lookup.grid(row=1, column=4, pady=(20, 0))
 
-    # --------- Linje 1: fil-opslag + ryd output ----------
     btn_file = ttk.Button(
         main_frame,
         text="Slå op fra fil...",
         command=lambda: on_file_lookup(record_type_var, text_output, resolver),
     )
-    btn_file.grid(row=1, column=1, sticky="w", pady=(10, 0))
+    btn_file.grid(row=1, column=1, sticky="w", pady=(20, 0))
 
     btn_clear = ttk.Button(
         main_frame,
         text="Ryd output",
         command=lambda: on_clear_output(text_output),
     )
-    btn_clear.grid(row=1, column=2, sticky="w", pady=(10, 0))
+    btn_clear.grid(row=1, column=0, sticky="w", pady=(20, 0))
 
     # --------- Linje 2: DNS-server(e) valg ----------
     label_dns = ttk.Label(main_frame, text="DNS-server(e):")
